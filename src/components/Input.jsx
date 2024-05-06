@@ -18,19 +18,20 @@ export const Input = ({
 
     return (
         <>
-            {/* falta css */}
-            <div>
-                <span>{label}</span>
+            <div className="input-group">
+                <div className="container-lblInput">
+                    <span className="container-lblInput-lbl">{label}</span>
+                </div>
+                <input
+                    type={type}
+                    value={value}
+                    onChange={handleValueChange}
+                    onBlur={handleInputBlur}
+                />
+                {/* <span className="danger">
+                    {showErrorMessage && validationMessage}
+                </span> */}
             </div>
-            <input
-                type={type}
-                value={value}
-                onChange={handleValueChange}
-                onBlur={handleInputBlur}
-            />
-            <span>
-                {showErrorMessage && validationMessage} 
-            </span>
         </>
     )
 }

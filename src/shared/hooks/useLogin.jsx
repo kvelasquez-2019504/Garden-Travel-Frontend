@@ -10,7 +10,6 @@ export const useLogin = () => {
 
     const login = async (email, password) => {
         setIsLoading(true);
-
         const response = await loginRequest({
             email,
             password,
@@ -19,16 +18,17 @@ export const useLogin = () => {
 
         if (response.error) {
             return toast.error(response.e?.response?.data || "An error occurred while trying to login, please try again");
+
         }
 
         const { userDetails } = response.data;
 
         localStorage.setItem("user", JSON.stringify(userDetails));
 
-        navigate("/");
+        navigate('/')
     }
     return {
-        isLoading,
         login,
+        isLoading,
     }
 }

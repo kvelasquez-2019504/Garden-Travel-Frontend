@@ -65,41 +65,48 @@ export const Login = ({ switchAuthHandler }) => {
     const isSubmitButtonDisabled = isLoading || !formState.password.isValid || !formState.email.isValid
 
     return (
-        <div>
-            <Logo />
-            <form>
-                <Input
-                    field="email"
-                    label="Email"
-                    value={formState.email.value}
-                    onChangeHandler={handleInputValueChange}
-                    type="text"
-                    showErrorMessage={formState.email.showError}
-                    validationMessage={emailValidationMessage}
-                    onBlurHandler={handleInputValidationOnBlur}
-                />
-                <Input
-                    field="password"
-                    label="Password"
-                    value={formState.password.value}
-                    onChangeHandler={handleInputValueChange}
-                    type="password"
-                    showErrorMessage={formState.password.showError}
-                    validationMessage={validatePasswordMessage}
-                    onBlurHandler={handleInputValidationOnBlur}
-                />
-                <button onClick={handleLogin} disabled={isSubmitButtonDisabled}>
-                    Login
-                </button>
-            </form>
-            <span onClick={switchAuthHandler}>
-                <p>
-                    Do you don't have an account?
-                </p>
-                <p>
-                    Sign In here
-                </p>
-            </span>
-        </div>
+        <>
+            <section className="container-login">
+                <form className="card">
+                    <h1>Welcome</h1>
+                    <div className="divInput">
+                        <Input
+                            field="email"
+                            label="Enter an email address"
+                            value={formState.email.value}
+                            onChangeHandler={handleInputValueChange}
+                            type="text"
+                            showErrorMessage={formState.email.showError}
+                            validationMessage={emailValidationMessage}
+                            onBlurHandler={handleInputValidationOnBlur}
+                        />
+                        <Input
+                            field="password"
+                            label="Enter a password"
+                            value={formState.password.value}
+                            onChangeHandler={handleInputValueChange}
+                            type="password"
+                            showErrorMessage={formState.password.showError}
+                            validationMessage={validatePasswordMessage}
+                            onBlurHandler={handleInputValidationOnBlur}
+                        />
+                            <button type="submit" onClick={handleLogin} disabled={isSubmitButtonDisabled} className="button-login">
+                                Login
+                            </button>
+                        <span onClick={switchAuthHandler} className="switch-Register">
+                            <p>
+                                Do you don't have an account?
+                            </p>
+                            <p className="signIn">
+                                Sign In here
+                            </p>
+                        </span>
+                    </div>
+                </form>
+            </section>
+            <div>
+                <Logo />
+            </div>
+        </>
     )
 }
