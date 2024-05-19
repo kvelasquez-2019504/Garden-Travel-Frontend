@@ -1,8 +1,8 @@
 import { AuthPage } from "./pages/auth";
-import { LoginConfirm } from "./pages/loginConfirm";
+    import { HotelesPage } from "./pages/hoteles/HotelesPage";
 const routes = [
     {path: '/auth', element: <AuthPage/>},
-    {path: '/*', element: <LoginConfirm/>}
+    {path: '/hoteles', element: <HotelesPage/>}
 ]
 
 export default routes;

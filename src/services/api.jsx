@@ -30,3 +30,14 @@ export const login = async (data) => {
         }
     }
 }
+
+export const getHoteles = async () => {
+    try {
+        return await apiClient.get('/hoteles/lista');
+    } catch (e) {
+        return{
+            error: true,
+            e
+        }
+    }
+};
