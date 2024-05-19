@@ -11,7 +11,6 @@ export const Hoteles = () => {
 
     return (
         <section>
-            <h1>Hoteles</h1>
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error}</p>}
             <div className="card-container">
