@@ -1,4 +1,4 @@
-import logo from '../assets/img/Logo-GardenTravelHotel-Login.png'
+import logo from '../assets/img/Logo-GardenTravelHotel-Login.svg'
 import logoMobile from '../assets/img/Logo-GardenTravelHotel-horizontal.png'
 import { useMediaQuery } from 'react-responsive'
 export const Logo = () => {

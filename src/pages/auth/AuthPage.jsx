@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Login } from "../../components/Login";
-import './authPage.css'; 
+import './authPage.css';
 
 export const AuthPage = () => {
     const [isLogin, setIsLogin] = useState(true);
@@ -10,6 +10,6 @@ export const AuthPage = () => {
     };
 
     return (
-            <Login switchAuthHandler={handleAuthPageToggle} />
+        <Login switchAuthHandler={handleAuthPageToggle} />
     );
 }

@@ -90,9 +90,9 @@ export const Login = ({ switchAuthHandler }) => {
                             validationMessage={validatePasswordMessage}
                             onBlurHandler={handleInputValidationOnBlur}
                         />
-                            <button type="submit" onClick={handleLogin} disabled={isSubmitButtonDisabled} className="button-login">
-                                Login
-                            </button>
+                        <button type="submit" onClick={handleLogin} disabled={isSubmitButtonDisabled} className="button-login">
+                            Login
+                        </button>
                         <span onClick={switchAuthHandler} className="switch-Register">
                             <p>
                                 Do you don't have an account?
@@ -102,11 +102,12 @@ export const Login = ({ switchAuthHandler }) => {
                             </p>
                         </span>
                     </div>
-                </form>
+                </form>   
+                <div>
+                    <Logo />
+                </div>
             </section>
-            <div>
-                <Logo />
-            </div>
+
         </>
     )
 }
