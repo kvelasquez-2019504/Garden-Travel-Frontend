@@ -24,7 +24,7 @@ export const login = async (data) => {
     try {
         return await apiClient.post('/auth/login', data);
     } catch (e) {
-        return{
+        return {
             error: true,
             e
         }
@@ -35,9 +35,43 @@ export const getHoteles = async () => {
     try {
         return await apiClient.get('/hoteles/lista');
     } catch (e) {
-        return{
+        return {
             error: true,
             e
         }
+    }
+};
+
+export const getServices = async () => {
+    try {
+        return await apiClient.get('/servicio');
+    } catch (e) {
+        return {
+            error: true,
+            e
+        }
+    }
+}
+
+
+export const addService = async (nombre, precio) => {
+    try {
+        return await apiClient.post('/servicio/create', { nombre, precio });
+    } catch (e) {
+        return {
+            error: true,
+            e
+        }
+    }
+}
+
+export const deleteService = async (id) => {
+    try {
+        return await apiClient.delete('/servicio/eliminar', { data: { id } });
+    } catch (e) {
+        return {
+            error: true,
+            e
+        };
     }
 };
