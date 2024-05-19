@@ -1,5 +1,10 @@
+/* Estilos generales */
 * {
     color: #33375F;
+}
+
+.hotel-section {
+    padding: 20px;
 }
 
 .card-container {
@@ -25,8 +30,6 @@
     margin: 15px;
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    /* padding: 20px; */
-    /* border-radius: 20px 20px 0 0; */
     border-radius: 20px;
     transition: 0.3s ease-in-out;
 }
@@ -55,7 +58,6 @@
 }
 
 .card-title {
-    /* margin: 10px 0; */
     width: 100%;
     text-align: left;
     margin-top: 7%;
@@ -89,7 +91,6 @@
     margin: 0;
     font-size: 100%;
     width: 100%;
-
 }
 
 .card-phone {
@@ -101,17 +102,51 @@
     margin-left: 15%;
 }
 
-/* .card-text-phone{
-    width: 100%;
-    text-align: left;
-    margin-top: 0;
-    margin-left: 15%;
-    font-size: 100%;
-} */
-
 .phone {
-    /* position: absolute;
-    top: 0;
-    left: 0; */
     width: 8%;
+}
+
+/* Media queries para teléfonos */
+@media only screen and (max-width: 768px) {
+    .card-hoteles {
+        width: 45%;
+    }
+}
+
+/* Media queries para tabletas */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .card-hoteles {
+        width: 30%;
+    }
+
+    .hotel-section {
+        padding: 20px 10%;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Media queries para dispositivos pequeños */
+@media only screen and (max-width: 480px) {
+    .hotel-section {
+        padding: 10px;
+    }
+
+    .card-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .card-hoteles {
+        width: 90%;
+        margin: 10px auto;
+    }
 }

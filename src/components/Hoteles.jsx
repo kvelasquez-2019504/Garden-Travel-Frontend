@@ -10,7 +10,7 @@ export const Hoteles = () => {
     }, []);
 
     return (
-        <section>
+        <section className="hotel-section">
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error}</p>}
             <div className="card-container">
