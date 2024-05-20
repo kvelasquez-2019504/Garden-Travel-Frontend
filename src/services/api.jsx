@@ -75,3 +75,16 @@ export const deleteService = async (id) => {
         };
     }
 };
+
+
+
+export const getPaqueteServicio = async () => {
+    try {
+        return await apiClient.get('/PaqueteServicio/listar');
+    } catch (e) {
+        return {
+            error: true,
+            e
+        }
+    }
+}

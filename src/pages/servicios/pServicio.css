@@ -1,0 +1,26 @@
+.card-pservicio {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+}
+
+.card-details-pservicio {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-title-pservicio {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.text-details-pservicio {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.text-details-pservicio li {
+    margin: 4px 0;
+}
