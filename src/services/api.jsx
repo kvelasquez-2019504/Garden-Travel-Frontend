@@ -41,3 +41,14 @@ export const getHoteles = async () => {
         }
     }
 };
+
+export const addHotel = async (data) => {
+    try {
+        return await apiClient.post('/hoteles/agregar', data);
+    } catch (e) {
+        return{
+            error: true,
+            e
+        }
+    }
+};
