@@ -1,18 +1,36 @@
 .card-pservicio {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 8px 0;
+    width: 25%;
+    height: 500px;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #404767;
+    /* Añadimos una sombra suave */
+    overflow: hidden;
+    /* Para que las esquinas redondeadas no se vean cortadas por la sombra */
+    transition: transform 0.3s ease;
+    /* Añadimos una transición suave al pasar el ratón */
+    background-color: #FFFAAC;
+    cursor: pointer;
+}
+
+.card-pservicio:hover {
+    transform: translateY(-5px);
+    /* Al pasar el ratón, elevamos ligeramente la tarjeta */
 }
 
 .card-details-pservicio {
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
+    /* Aumentamos el espacio interno */
 }
 
 .text-title-pservicio {
     font-size: 1.2em;
     font-weight: bold;
+    color: #404767;
+    margin-bottom: 10px;
+    /* Añadimos un espacio entre el título y los detalles */
 }
 
 .text-details-pservicio {
@@ -23,4 +41,5 @@
 
 .text-details-pservicio li {
     margin: 4px 0;
+    color: #404767;
 }

@@ -14,11 +14,11 @@ export const PaqueteServicios = () => {
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error}</p>}
             <div className="card-container">
-                {paqueteData.map((paquete) => (
+                {paqueteData.map(paquete => (
                     <CardPservicio
                         key={paquete._id}
                         nombrePservicio={paquete.nombrePservicio}
-                        nombreServicio={paquete.nombreServicio}
+                        nombreServicio={paquete.nombreServicio.filter(servicio => servicio.state === true)}
                     />
                 ))}
             </div>
