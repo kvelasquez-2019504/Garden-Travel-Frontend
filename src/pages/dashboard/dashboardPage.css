@@ -10,13 +10,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* Permite que los elementos se apilen si no hay suficiente espacio horizontal */
+    flex-wrap: wrap;
+    /* Permite que los elementos se apilen si no hay suficiente espacio horizontal */
 }
 
 .cabecera-h1 {
     margin: 0;
-    font-size:1.8em;
-    font-family: 'Bree Serif',cursive;
+    font-size: 1.8em;
+    font-family: 'Bree Serif', cursive;
 }
 
 .cabecera-h1 a {
@@ -28,9 +29,11 @@ body {
 }
 
 .cabecera-h1 img {
-    max-width: 90px; /* Tamaño máximo de la imagen */
+    max-width: 90px;
+    /* Tamaño máximo de la imagen */
     height: auto;
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    margin-right: 10px;
+    /* Espacio entre la imagen y el texto */
 }
 
 .cabecera-nav {
@@ -42,20 +45,24 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center; /* Alinea verticalmente los elementos de la lista */
-    flex-wrap: wrap; /* Permite que los elementos se apilen si no hay suficiente espacio horizontal */
+    align-items: center;
+    /* Alinea verticalmente los elementos de la lista */
+    flex-wrap: wrap;
+    /* Permite que los elementos se apilen si no hay suficiente espacio horizontal */
 }
 
 .cabecera-li {
     font-size: 1.5em;
-    font-family: 'Bree Serif',cursive;
+    font-family: 'Bree Serif', cursive;
     display: flex;
     align-items: center;
-    margin-right: 30px; /* Ajusta el margen entre los elementos del menú */
+    margin-right: 30px;
+    /* Ajusta el margen entre los elementos del menú */
 }
 
 .cabecera-li svg {
-    margin-right: 5px; /* Espacio entre el icono SVG y el texto */
+    margin-right: 5px;
+    /* Espacio entre el icono SVG y el texto */
 }
 
 .cabecera-li a {
@@ -73,15 +80,18 @@ body {
 
 @media only screen and (min-width: 601px) {
     .cabecera-nav {
-        margin-left: auto; /* Mueve el nav hacia la derecha */
+        margin-left: auto;
+        /* Mueve el nav hacia la derecha */
     }
 
     .cabecera-ul {
-        justify-content: center; /* Centra horizontalmente las opciones Hotels, Reservations y Services */
+        justify-content: center;
+        /* Centra horizontalmente las opciones Hotels, Reservations y Services */
     }
 
     .cabecera-li:not(:last-child) {
-        margin-right: 20px; /* Espacio entre las opciones Hotels, Reservations y Services */
+        margin-right: 20px;
+        /* Espacio entre las opciones Hotels, Reservations y Services */
     }
 }
 
@@ -92,7 +102,8 @@ body {
     }
 
     .cabecera-nav {
-        margin-left: 0; /* Restablece el margen para pantallas pequeñas */
+        margin-left: 0;
+        /* Restablece el margen para pantallas pequeñas */
     }
 
     .cabecera-ul {
@@ -101,14 +112,129 @@ body {
 
     .cabecera-li {
         margin: 5px 0;
-        margin-right: 0; /* Restablece el margen para pantallas pequeñas */
+        margin-right: 0;
+        /* Restablece el margen para pantallas pequeñas */
     }
 
     .cabecera-li:nth-child(-n+3) {
-        order: 2; /* Mueve los primeros 3 elementos al medio */
+        order: 2;
+        /* Mueve los primeros 3 elementos al medio */
     }
 
     .cabecera-li:nth-last-child(-n+2) {
-        order: 3; /* Mueve los últimos 2 elementos hacia la derecha */
+        order: 3;
+        /* Mueve los últimos 2 elementos hacia la derecha */
+    }
+}
+
+
+
+/****************** Home Page Component ******************/
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.content {
+    flex: 1 1 45%;
+    padding: 20px;
+    font-family: 'Bree Serif', cursive;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    color: #404467;
+    
+}
+
+.content p {
+    font-size: 1.2rem;
+    color: #404467;
+    margin: 10px 0 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #404467;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.image {
+    flex: 1 1 45%;
+    padding: 20px;
+}
+
+.image img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+footer {
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    font-size: 1rem;
+}
+
+.footer-left {
+    color: #404467;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.footer-right span {
+    margin-right: 10px;
+}
+
+.footer-right a {
+    margin-right: 10px;
+    color: #404467;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content,
+    .image {
+        flex: 1 1 100%;
+        padding: 10px;
+    }
+
+    .content h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .content p,
+    .footer-left,
+    .footer-right span {
+        text-align: center;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-right a {
+        margin: 5px 0;
     }
 }
