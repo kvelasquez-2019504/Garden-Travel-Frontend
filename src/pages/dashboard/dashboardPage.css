@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para la cabecera */
+.cabecera {
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecera-h1 {
+    margin: 0;
+}
+
+.cabecera-h1 a {
+    text-decoration: none;
+    text-align: center;
+    color: #404467;
+    display: flex;
+    align-items: center;
+}
+
+.cabecera-h1 img {
+    max-width: 50px; /* Tamaño máximo de la imagen */
+    height: auto;
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.cabecera-nav {
+    margin-left: auto; /* Mueve el nav hacia la derecha */
+}
+
+.cabecera-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos de la lista */
+}
+
+.cabecera-li {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Ajusta el margen entre los elementos del menú */
+}
+
+.cabecera-li:not(:last-child) {
+    margin-right: 40px; /* Espacio entre las opciones "Hotels", "Reservations" y "Services" */
+}
+
+.cabecera-li a {
+    text-decoration: none;
+    color: #404467;
+}
+
+.cabecera-li a:hover {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    padding: 5px;
+    transition: background-color 0.3s;
+}
+
+@media only screen and (max-width: 600px) {
+    .cabecera {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cabecera-nav {
+        margin-left: 0; /* Restablece el margen para pantallas pequeñas */
+    }
+
+    .cabecera-ul {
+        flex-direction: column;
+    }
+
+    .cabecera-li {
+        margin: 5px 0;
+        margin-right: 0; /* Restablece el margen para pantallas pequeñas */
+    }
+}
