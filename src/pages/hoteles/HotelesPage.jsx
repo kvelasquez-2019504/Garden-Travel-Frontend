@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
-import {Navbar} from "../../components/Navbar";
+import { Navbar } from "../../components/Navbar";
 import Modal from 'react-modal';
 import { Hoteles } from "../../components/Hoteles";
-import {Home} from "../../components/home/Home";
+import { Home } from "../../components/home/Home";
+import { HotelReservation } from "../../components/reservation/HotelReservation";
 import { AddHotel } from "../../components/AddHotel";
 import "./hotelesPage.css";
 
@@ -16,8 +17,9 @@ export const HotelesPage = () => {
         <>
             <Navbar />
             <Routes>
-                <Route path="/home" element={<Home/>} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/hoteles" element={<Hoteles />} />
+                <Route path="/hoteles/reserv/:idHotel" element={<HotelReservation />}></Route>
             </Routes>
         </>
     );

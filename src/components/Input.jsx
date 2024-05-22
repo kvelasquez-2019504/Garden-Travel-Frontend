@@ -22,11 +22,12 @@ export const Input = ({
                 <div className="container-lblInput">
                     <span className="container-lblInput-lbl">{label}</span>
                 </div>
-                <input
+                <input 
                     type={type}
                     value={value}
                     onChange={handleValueChange}
                     onBlur={handleInputBlur}
+                    style={{backgroundColor:'#DADADA'}}
                 />
             </div>
         </>

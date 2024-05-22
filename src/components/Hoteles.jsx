@@ -21,7 +21,7 @@ export const Hoteles = () => {
             <div className="card-container">
                 {hotelData.map((hotel) => (
                     <CardHotel
-                        key={hotel.id}
+                        id={hotel._id}
                         nombre={hotel.nombre}
                         direccion={hotel.direccion}
                         telefono={hotel.telefono}

@@ -390,6 +390,14 @@ footer {
     overflow: visible;
 }
 
+#reserv{
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+}
+
 .form-add-hotel {
     width: 30%;
     margin: 3.5% auto;
@@ -402,6 +410,8 @@ footer {
     align-items: center;
     position: relative;
 }
+
+
 
 .form-add-hotel .container-lblInput-lbl {
     color: #33375F;
