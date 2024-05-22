@@ -20,11 +20,10 @@ export const useLogin = () => {
             return toast.error(response.e?.response?.data || "An error occurred while trying to login, please try again");
 
         }
-        const userDetails = {
-            ...response.data,
-            token: response.data.token,
-        }
-        localStorage.setItem("user", JSON.stringify(userDetails));
+
+        const  usuario  = response.data;
+
+        localStorage.setItem("user", JSON.stringify(usuario));
 
         navigate('/home')
     }
