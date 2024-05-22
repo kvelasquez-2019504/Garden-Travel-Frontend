@@ -1,18 +1,23 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useGetHoteles } from "../shared/hooks";
 import { CardHotel } from "./CardHotel";
+import { AddHotel } from "./AddHotel";
+import Modal from 'react-modal';
 
 export const Hoteles = () => {
-    const { hotelData, loading, error, fetchHoteles } = useGetHoteles();
+    const { hotelData, fetchHoteles } = useGetHoteles();
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     useEffect(() => {
         fetchHoteles();
     }, []);
 
+    const addHotel = async () => {
+        await fetchHoteles();
+        setModalIsOpen(false);
+    };
     return (
         <section className="hotel-section">
-            {loading && <p>Loading...</p>}
-            {error && <p>Error: {error}</p>}
             <div className="card-container">
                 {hotelData.map((hotel) => (
                     <CardHotel
@@ -25,6 +30,16 @@ export const Hoteles = () => {
                     />
                 ))}
             </div>
+
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={() => setModalIsOpen(false)}
+                className={"modal"}
+            >
+                <AddHotel onAddHotel={addHotel} />
+            </Modal>
+            <button className="add-hotel" onClick={() => setModalIsOpen(true)}>Add Hotel</button>
+
         </section>
     );
 };

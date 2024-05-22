@@ -67,7 +67,9 @@ export const Login = ({ switchAuthHandler }) => {
     return (
         <>
             <section className="container-login">
+                <button onClick={() => window.location.href = "/home"} className="btn-Cerrar">X</button>
                 <form className="card">
+
                     <h1>Welcome</h1>
                     <div className="divInput">
                         <Input
@@ -102,7 +104,7 @@ export const Login = ({ switchAuthHandler }) => {
                             </p>
                         </span>
                     </div>
-                </form>   
+                </form>
                 <div>
                     <Logo />
                 </div>

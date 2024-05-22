@@ -7,6 +7,7 @@ export const Input = ({
     showErrorMessage,
     validationMessage,
     onBlurHandler,
+    datalistId,
 }) => {
     const handleValueChange = (event) => {
         onChangeHandler(event.target.value, field);
@@ -27,6 +28,7 @@ export const Input = ({
                     value={value}
                     onChange={handleValueChange}
                     onBlur={handleInputBlur}
+                    list={datalistId}
                 />
             </div>
         </>

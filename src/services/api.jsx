@@ -7,10 +7,10 @@ const apiClient = axios.create({
 
 apiClient.interceptors.request.use(
     (config) => {
-        const userDetails = localStorage.getItem('user');
+        const usuario = localStorage.getItem('usuario');
 
-        if (userDetails) {
-            const token = JSON.parse(userDetails).token;
+        if (usuario) {
+            const token = JSON.parse(usuario).token;
             config.headers.Authorization = `Bearer ${token}`;
         }
         return config;
@@ -41,6 +41,50 @@ export const getHoteles = async () => {
         }
     }
 };
+
+export const addHotel = async (data) => {
+    try {
+        return await apiClient.post('/hoteles/agregar', data);
+    } catch (e) {
+        return{
+            error: true,
+            e
+        }
+    }
+};
+
+export const register = async (data) => {
+    try {
+        return await apiClient.post('/usuario/crearUsuario', data);
+    } catch (e) {
+        return{
+            error: true,
+            e
+        }
+    }
+};
+
+export const getOwnBills = async () => {
+    try {
+        return await apiClient.get('/factura/listar');
+    } catch (e) {
+        return{
+            error: true,
+            e
+        }
+    }
+};
+
+export const getTipoHabitaciones = async () => {
+    try {
+        return await apiClient.get('/tipoHabitacion/lista');
+    } catch (e) {
+        return{
+            error: true,
+            e
+        }
+    }
+}
 
 export const getServices = async () => {
     try {
