@@ -120,63 +120,100 @@
     cursor: pointer;
 }
 
+.switch-Register p{
+    color: #fff;
+}
+/* Register  */
 
-@media screen and (max-width: 700px) {
-    
+#cardRegister{
+    height: 92%;
+}
+
+#btn-Register{
+    width: 60%;
+    height: 10%;
+}
+
+.Title{
+    margin-bottom: 6px;
+}
+
+.regiter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+}
+
+@media (max-width: 1024px) {
     .container-login {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
     }
-
+    
     .img-right {
-        display: table-column;
+        display: flex;
         width: 100%;
         height: auto;
     }
 
-    .card{
-        width: 70%;
-        height: 60%;
-        display: flexbox;
-        justify-content: center;
+    .card {
+        width: 50%;
+        height: auto;
+        padding: 20px;
+        margin-top: 25%;
     }
 
-    .card h1{
-        font-size: 165%;
-        /* margin-top: 15%; */
-    }
-    
-    .container-lblInput-lbl{
-        font-size: 90%;
-    }
-
-    .button-login{
-        width: 45%;
-        height: 15%;
-        font-size: 100%;
-        margin-top: 10%;
+    .container-login input,
+    .button-login {
+        width: 90%;
     }
 }
-@media screen and (max-width: 200px) {
-    .card{
-        margin-top: 25%;
-        height: 62%;
+
+@media (max-width: 540px) {
+    .container-login {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
     }
 
-    .card h1{
-        font-size: 350%;
-        /* margin-top: -5%; */
+    .img-right {
+        display: flex;
+        width: 100%;
+        height: auto;
     }
 
-    .container-lblInput-lbl{
-        font-size: 180%;
+    .card {
+        width: 60%;
+        height: auto;
+        padding: 15px;
     }
 
-    .button-login{
-        font-size: 180%;
-        margin-top: 3%;
+    .card h1 {
+        font-size: 28px;
     }
 
-    .switch-Register{
-        font-size: 95%;
+    .container-login input,
+    .button-login {
+        width: 100%;
+    }
+
+    .container-lblInput-lbl {
+        font-size: 16px;
+    }
+
+    .button-login {
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .switch-Register {
+        font-size: 12px;
     }
 }
