@@ -1,9 +1,24 @@
 import { useState } from "react";
+import { useEffect } from 'react';
 import { Input } from "./Input";
 import { useAddHotel } from "../shared/hooks/useAddHotel";
+import { useGetTipoHab } from "../shared/hooks/useGetTipoHab";
+
+const roomOptions = [
+    'Single Room',
+    'Double Room',
+    'Suite',
+    'Family Room',
+    'Deluxe Room'
+];
 
 export const AddHotel = ({ onAddHotel }) => {
     const { loading, addHotel } = useAddHotel();
+    const { tipoHabitacionData, fetchTipoHabitaciones } = useGetTipoHab();
+
+    useEffect(() => {
+        fetchTipoHabitaciones();
+    }, []);
 
     const [formState, setFormState] = useState({
         nombre: { value: '', isValid: false, showError: false },
@@ -11,6 +26,7 @@ export const AddHotel = ({ onAddHotel }) => {
         telefono: { value: '', isValid: false, showError: false },
         estrellas: { value: '', isValid: false, showError: false },
         habitaciones: { value: '', isValid: false, showError: false },
+        cantidad: { value: '', isValid: false, showError: false },
         habOcupadas: { value: '', isValid: false, showError: false },
         img: { value: '', isValid: false, showError: false },
     });
@@ -30,14 +46,24 @@ export const AddHotel = ({ onAddHotel }) => {
         }));
     };
 
+    const handleHabitacionesChange = (value) => {
+        const selectedOption = tipoHabitacionData.find(option => option.nombre === value);
+        if (selectedOption) {
+            handleInputValueChange('habitaciones', selectedOption._id);
+        } else {
+            handleInputValueChange('habitaciones', value);
+        }
+    };
+
     const handleSubmit = async (e) => {
+        let habitaciones = [ { tipoHabitacion: formState.habitaciones.value, cantidad: formState.cantidad.value }]
         e.preventDefault();
         const newHotel = await addHotel(
             formState.nombre.value,
             formState.direccion.value,
             formState.telefono.value,
             formState.estrellas.value,
-            formState.habitaciones.value,
+            habitaciones,
             formState.habOcupadas.value,
             formState.img.value
         );
@@ -48,6 +74,7 @@ export const AddHotel = ({ onAddHotel }) => {
             telefono: { value: '', isValid: false, showError: false },
             estrellas: { value: '', isValid: false, showError: false },
             habitaciones: { value: '', isValid: false, showError: false },
+            cantidad: { value: '', isValid: false, showError: false },
             habOcupadas: { value: '', isValid: false, showError: false },
             img: { value: '', isValid: false, showError: false },
         });
@@ -99,6 +126,15 @@ export const AddHotel = ({ onAddHotel }) => {
                     label="Habitaciones"
                     value={formState.habitaciones.value}
                     onChangeHandler={handleInputValueChange}
+                    type="text"
+                    onBlurHandler={handleInputValidationOnBlur}
+                    datalistId="tipoHabitacionData"
+                />
+                <Input
+                    field="cantidad"
+                    label="Cantidad"
+                    value={formState.cantidad.value}
+                    onChangeHandler={handleInputValueChange}
                     type="number"
                     onBlurHandler={handleInputValidationOnBlur}
                 />
@@ -111,7 +147,11 @@ export const AddHotel = ({ onAddHotel }) => {
                     onBlurHandler={handleInputValidationOnBlur}
                 />
             </div>
-
+            <datalist id="tipoHabitacionData">
+                {tipoHabitacionData.map((option, index) => (
+                    <option key={index} value={option._id} />  
+                ))}
+            </datalist>
             <Input
                 field="img"
                 label="Imagen"

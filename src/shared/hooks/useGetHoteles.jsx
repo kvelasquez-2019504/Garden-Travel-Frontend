@@ -10,8 +10,8 @@ export const useGetHoteles = () => {
         try {
             setLoading(true);
             const { data } = await getHoteles();
-            console.log(data);
-            setHotelData(data.hotelData);
+            console.log("dataa hoteles", data);
+            setHotelData(data.hoteles);
             setLoading(false);
         } catch (e) {
             setError(e.message);

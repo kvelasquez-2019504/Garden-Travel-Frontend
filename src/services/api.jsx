@@ -52,3 +52,25 @@ export const addHotel = async (data) => {
         }
     }
 };
+
+export const getOwnBills = async () => {
+    try {
+        return await apiClient.get('/factura/listar');
+    } catch (e) {
+        return{
+            error: true,
+            e
+        }
+    }
+};
+
+export const getTipoHabitaciones = async () => {
+    try {
+        return await apiClient.get('/tipoHabitacion/lista');
+    } catch (e) {
+        return{
+            error: true,
+            e
+        }
+    }
+}

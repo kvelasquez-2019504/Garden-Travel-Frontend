@@ -14,6 +14,7 @@ export const Navbar = () => {
                     <li class="cabecera-li"><Link to="/hoteles">Hotels</Link></li>
                     <li class="cabecera-li"><Link to="#">Reservations</Link></li>
                     <li class="cabecera-li"><Link to="#">Services</Link></li>
+                    <li class='cabecera-li'><Link to="/facturas">Facturas</Link></li>
                 </ul>
             </nav>
             <nav class="cabecera-nav">
