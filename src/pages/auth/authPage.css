@@ -147,64 +147,73 @@
     background-color: #fff;
 }
 
-
-@media screen and (max-width: 700px) {
-
+@media (max-width: 1024px) {
     .container-login {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
     }
-
+    
     .img-right {
-        display: table-column;
+        display: flex;
         width: 100%;
         height: auto;
     }
 
     .card {
-        width: 70%;
-        height: 60%;
-        display: flexbox;
-        justify-content: center;
+        width: 50%;
+        height: auto;
+        padding: 20px;
+        margin-top: 25%;
     }
 
-    .card h1 {
-        font-size: 165%;
-        /* margin-top: 15%; */
-    }
-
-    .container-lblInput-lbl {
-        font-size: 90%;
-    }
-
+    .container-login input,
     .button-login {
-        width: 45%;
-        height: 15%;
-        font-size: 100%;
-        margin-top: 10%;
+        width: 90%;
     }
 }
 
-@media screen and (max-width: 200px) {
+@media (max-width: 540px) {
+    .container-login {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .img-right {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+
     .card {
-        margin-top: 25%;
-        height: 62%;
+        width: 60%;
+        height: auto;
+        padding: 15px;
     }
 
     .card h1 {
-        font-size: 350%;
-        /* margin-top: -5%; */
+        font-size: 28px;
+    }
+
+    .container-login input,
+    .button-login {
+        width: 100%;
     }
 
     .container-lblInput-lbl {
-        font-size: 180%;
+        font-size: 16px;
     }
 
     .button-login {
-        font-size: 180%;
-        margin-top: 3%;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
     }
 
     .switch-Register {
-        font-size: 95%;
+        font-size: 12px;
     }
 }

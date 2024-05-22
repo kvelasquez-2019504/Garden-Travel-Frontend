@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Input } from "../Input";
 import { useRegister } from "../../shared/hooks";
 import { Logo } from "../Logo";
-import { emailValidationMessage } from "../../shared/validators";
 
 export const Register = ({ switchAuthHandler }) => {
     const { addUser } = useRegister();
@@ -95,8 +94,7 @@ export const Register = ({ switchAuthHandler }) => {
                         value={formState.nombre.value}
                         onChangeHandler={handleInputValueChange}
                         type="text"
-                        // showError={formState.nombre.showError}
-                        // validationMessage={emailValidationMessage}
+
                         onBlurHandler={handleInputValidationOnBlur}
                     />
                     <Input
@@ -105,8 +103,7 @@ export const Register = ({ switchAuthHandler }) => {
                         value={formState.apellido.value}
                         onChangeHandler={handleInputValueChange}
                         type="text"
-                        // showError={formState.apellido.showError}
-                        // validationMessage={emailValidationMessage}
+
                         onBlurHandler={handleInputValidationOnBlur}
                     />
                     <Input
@@ -115,8 +112,7 @@ export const Register = ({ switchAuthHandler }) => {
                         value={formState.email.value}
                         onChangeHandler={handleInputValueChange}
                         type="text"
-                        // showError={formState.email.showError}
-                        // validationMessage={emailValidationMessage}
+
                         onBlurHandler={handleInputValidationOnBlur}
                     />
                     <Input
@@ -125,11 +121,11 @@ export const Register = ({ switchAuthHandler }) => {
                         value={formState.password.value}
                         onChangeHandler={handleInputValueChange}
                         type="password"
-                        // showError={formState.password.showError}
-                        // validationMessage={emailValidationMessage}
+
                         onBlurHandler={handleInputValidationOnBlur}
                     />
-                    <button type="submit" disabled={isSubmitButtonDisabled} className="button-login" id="btn-Register">
+                    
+                    <button type="submit" disabled={isSubmitButtonDisabled}  className="button-login" id="btn-Register">
                         Register
                     </button>
                     <span onClick={switchAuthHandler} className="switch-Register">
