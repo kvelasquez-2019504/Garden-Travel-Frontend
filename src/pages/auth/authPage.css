@@ -123,6 +123,23 @@
 .switch-Register p{
     color: #fff;
 }
+
+.btn-Cerrar{
+    background-color: #ac0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
 /* Register  */
 
 #cardRegister{

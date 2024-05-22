@@ -85,6 +85,7 @@ export const Register = ({ switchAuthHandler }) => {
 
     return (
         <section className="container-login">
+            <button onClick={() => window.location.href = "/home"} className="btn-Cerrar">X</button>
             <form onSubmit={handleRegister} className="card" id="cardRegister">
                 <h1 className="Title">Register</h1>
                 <div className="divInput">
@@ -124,8 +125,8 @@ export const Register = ({ switchAuthHandler }) => {
 
                         onBlurHandler={handleInputValidationOnBlur}
                     />
-                    
-                    <button type="submit" disabled={isSubmitButtonDisabled}  className="button-login" id="btn-Register">
+
+                    <button type="submit" disabled={isSubmitButtonDisabled} className="button-login" id="btn-Register">
                         Register
                     </button>
                     <span onClick={switchAuthHandler} className="switch-Register">
