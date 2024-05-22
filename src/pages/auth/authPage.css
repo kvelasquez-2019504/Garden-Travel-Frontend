@@ -120,9 +120,36 @@
     cursor: pointer;
 }
 
+.switch-Register p{
+    color: #fff;
+}
+/* Register  */
+
+#cardRegister{
+    height: 92%;
+}
+
+#btn-Register{
+    width: 60%;
+    height: 10%;
+}
+
+.Title{
+    margin-bottom: 6px;
+}
+
+.regiter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+}
+
 
 @media screen and (max-width: 700px) {
-    
+
     .container-login {
         flex-direction: column-reverse;
     }
@@ -133,50 +160,51 @@
         height: auto;
     }
 
-    .card{
+    .card {
         width: 70%;
         height: 60%;
         display: flexbox;
         justify-content: center;
     }
 
-    .card h1{
+    .card h1 {
         font-size: 165%;
         /* margin-top: 15%; */
     }
-    
-    .container-lblInput-lbl{
+
+    .container-lblInput-lbl {
         font-size: 90%;
     }
 
-    .button-login{
+    .button-login {
         width: 45%;
         height: 15%;
         font-size: 100%;
         margin-top: 10%;
     }
 }
+
 @media screen and (max-width: 200px) {
-    .card{
+    .card {
         margin-top: 25%;
         height: 62%;
     }
 
-    .card h1{
+    .card h1 {
         font-size: 350%;
         /* margin-top: -5%; */
     }
 
-    .container-lblInput-lbl{
+    .container-lblInput-lbl {
         font-size: 180%;
     }
 
-    .button-login{
+    .button-login {
         font-size: 180%;
         margin-top: 3%;
     }
 
-    .switch-Register{
+    .switch-Register {
         font-size: 95%;
     }
 }

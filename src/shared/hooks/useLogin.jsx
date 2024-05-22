@@ -21,9 +21,9 @@ export const useLogin = () => {
 
         }
 
-        const { usuario } = response.data;
+        const  usuario  = response.data;
 
-        localStorage.setItem("usuario", JSON.stringify(usuario));
+        localStorage.setItem("user", JSON.stringify(usuario));
 
         navigate('/home')
     }
