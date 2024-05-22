@@ -52,3 +52,14 @@ export const addHotel = async (data) => {
         }
     }
 };
+
+export const register = async (data) => {
+    try {
+        return await apiClient.post('/usuario/crearUsuario', data);
+    } catch (e) {
+        return{
+            error: true,
+            e
+        }
+    }
+};

@@ -4,10 +4,8 @@ import toast from 'react-hot-toast';
 
 export const useAddHotel = () => {
     const [hotelData, setHotelData] = useState([]);
-    // const [loading, setLoading] = useState(false);
 
     const addHotel = async (nombre, direccion, telefono, estrellas, habitaciones, habOcupadas, img,) => {
-        // setLoading(true);
         const response = await addHotelRequest({
             nombre,
             direccion,
@@ -24,12 +22,10 @@ export const useAddHotel = () => {
             setHotelData([...hotelData, response.data]);
             toast.success('Hotel added successfully');
         }
-        // setLoading(false);
         return response.data;
     };
 
     return {
-        // loading,
         addHotel,
     };
 };
